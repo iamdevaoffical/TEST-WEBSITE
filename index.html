@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lingauro | Real-Time Language Practice & Live Conversation Rooms</title>
+  <meta name="description" content="Drop into live voice and video rooms to practice speaking 30+ languages with real people. Watch videos, play games, and converse naturally in your browser.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons (Free SVG CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <div class="logo-area">
+        <a href="#hero" class="logo-area">
+          <div class="logo-icon">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <span class="logo-text">Ling<span>auro</span></span>
+        </a>
+        <div class="live-indicator">
+          <span class="live-dot"></span>
+          <span id="activeUserCounter">1,482 speaking live</span>
+        </div>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#rooms" class="nav-link active">Practice Rooms</a></li>
+        <li><a href="#activities" class="nav-link">Room Activities</a></li>
+        <li><a href="#speed-match" class="nav-link">1-on-1 Exchange</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-google btn-sm" id="googleAuthBtn" title="Instant Google Auth">
+          <i class="fa-brands fa-google" style="color: #ea4335;"></i>
+          <span>Continue with Google</span>
+        </button>
+        <button class="btn btn-primary btn-sm" id="quickStartBtn">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Join a Room</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <header class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-text-col">
+        <div class="hero-badge">
+          <span class="sparkle"><i class="fa-solid fa-sparkles"></i></span>
+          <span>Zero Downloads • 100% In-Browser • Free</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Stop memorizing drills.<br>
+          <span class="highlight-teal">Start speaking</span> with <span class="highlight-gold">real humans.</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          Jump into live voice & video rooms. Watch YouTube clips together, play icebreaker games, and hold genuine conversations in 30+ languages.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#rooms" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-microphone-lines"></i>
+            <span>Explore Live Rooms</span>
+          </a>
+          <button class="btn btn-gold btn-lg" id="hero1on1Btn">
+            <i class="fa-solid fa-user-group"></i>
+            <span>Find 1-on-1 Partner</span>
+          </button>
+        </div>
+
+        <div class="hero-trust-points">
+          <div class="trust-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>No app store install needed</span>
+          </div>
+          <div class="trust-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Camera optional (voice-only allowed)</span>
+          </div>
+          <div class="trust-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Beginner-friendly community</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual: Simulated Active Room Preview -->
+      <div class="hero-visual">
+        <!-- Floating highlight badge 1 -->
+        <div class="floating-pill floating-pill-1">
+          <span style="color: #cca400;"><i class="fa-solid fa-gamepad"></i></span>
+          <span>Playing: Taboo Icebreaker</span>
+        </div>
+
+        <!-- Floating highlight badge 2 -->
+        <div class="floating-pill floating-pill-2">
+          <span style="color: var(--teal-primary);"><i class="fa-solid fa-tv"></i></span>
+          <span>Synced YouTube Video</span>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="room-meta">
+              <span class="flag-badge">🇪🇸</span>
+              <div class="room-name-wrapper">
+                <h4>Café & Casual Conversations</h4>
+                <span class="room-level-tag">Spanish • Intermediate (B1-B2)</span>
+              </div>
+            </div>
+            <div class="live-tag-pill">
+              <span class="pulse-red"></span>
+              <span>LIVE</span>
+            </div>
+          </div>
+
+          <!-- Hero Stage Avatars Grid -->
+          <div class="hero-stage">
+            <!-- Speaker 1 (Active) -->
+            <div class="stage-participant speaking">
+              <div class="participant-avatar-wrap">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Camila" class="participant-avatar">
+                <div class="speaking-ring"></div>
+                <span class="mic-badge"><i class="fa-solid fa-microphone"></i></span>
+              </div>
+              <div class="participant-info">
+                <span class="participant-name">Camila <span style="font-size:0.75rem;">🇪🇸</span></span>
+                <span class="participant-role">Native Speaker</span>
+              </div>
+              <div class="soundwave-box">
+                <div class="sound-bar"></div>
+                <div class="sound-bar"></div>
+                <div class="sound-bar"></div>
+                <div class="sound-bar"></div>
+                <div class="sound-bar"></div>
+              </div>
+            </div>
+
+            <!-- Speaker 2 -->
+            <div class="stage-participant">
+              <div class="participant-avatar-wrap">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="Liam" class="participant-avatar">
+                <span class="mic-badge"><i class="fa-solid fa-microphone"></i></span>
+              </div>
+              <div class="participant-info">
+                <span class="participant-name">Liam <span style="font-size:0.75rem;">🇨🇦</span></span>
+                <span class="participant-role">Learner (B1)</span>
+              </div>
+            </div>
+
+            <!-- Speaker 3 -->
+            <div class="stage-participant">
+              <div class="participant-avatar-wrap">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80" alt="Sofia" class="participant-avatar">
+                <span class="mic-badge muted"><i class="fa-solid fa-microphone-slash"></i></span>
+              </div>
+              <div class="participant-info">
+                <span class="participant-name">Sofia <span style="font-size:0.75rem;">🇲🇽</span></span>
+                <span class="participant-role">Host</span>
+              </div>
+            </div>
+
+            <!-- Speaker 4 (You) -->
+            <div class="stage-participant" style="border: 1.5px dashed var(--teal-primary); background: var(--teal-subtle);">
+              <div class="participant-avatar-wrap">
+                <div class="participant-avatar" style="background: var(--teal-primary); color: #fff; display:flex; align-items:center; justify-content:center; font-weight:700;">YOU</div>
+                <span class="mic-badge"><i class="fa-solid fa-headphones"></i></span>
+              </div>
+              <div class="participant-info">
+                <span class="participant-name" style="color: var(--teal-primary);">Ready to talk</span>
+                <span class="participant-role">Click to Join</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%;" onclick="openRoomModal({
+            title: 'Café & Casual Conversations',
+            language: 'Spanish',
+            flag: '🇪🇸',
+            level: 'Intermediate (B1-B2)',
+            host: 'Sofia (Mexico)'
+          })">
+            <i class="fa-solid fa-door-open"></i>
+            <span>Drop Into This Room</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== LIVE PRACTICE ROOMS EXPLORER ==================== -->
+  <section class="rooms-section" id="rooms">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag"><i class="fa-solid fa-tower-broadcast"></i> Active Spaces</span>
+        <h2 class="section-title">Drop Into Any Room In Seconds</h2>
+        <p class="section-desc">Join an open table, talk freely, play icebreaker games, or just listen until you feel comfortable speaking.</p>
+      </div>
+
+      <!-- Explorer Filters Bar -->
+      <div class="explorer-controls">
+        <div class="filter-row">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="roomSearchInput" placeholder="Search by topic, language, host, or keyword...">
+          </div>
+
+          <div class="select-filters">
+            <select class="filter-dropdown" id="levelFilter">
+              <option value="all">All Levels</option>
+              <option value="beginner">Beginner Friendly (A1-A2)</option>
+              <option value="intermediate">Intermediate (B1-B2)</option>
+              <option value="advanced">Advanced & Native (C1-C2)</option>
+            </select>
+
+            <select class="filter-dropdown" id="activityFilter">
+              <option value="all">All Activities</option>
+              <option value="casual">Casual Voice & Video</option>
+              <option value="games">Icebreaker Games</option>
+              <option value="watch">Watch & Learn</option>
+              <option value="sing">Sing-alongs & Karaoke</option>
+            </select>
+
+            <button class="btn btn-outline" id="createRoomBtn">
+              <i class="fa-solid fa-plus" style="color: var(--teal-primary);"></i>
+              <span>Create Room</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Language Pill Tabs -->
+        <div class="language-pills-scroll" id="languagePills">
+          <button class="lang-pill active" data-lang="all">
+            <span>🌐 All</span>
+            <span class="pill-count">24</span>
+          </button>
+          <button class="lang-pill" data-lang="english">
+            <span>🇺🇸 English</span>
+            <span class="pill-count">8</span>
+          </button>
+          <button class="lang-pill" data-lang="spanish">
+            <span>🇪🇸 Spanish</span>
+            <span class="pill-count">5</span>
+          </button>
+          <button class="lang-pill" data-lang="french">
+            <span>🇫🇷 French</span>
+            <span class="pill-count">3</span>
+          </button>
+          <button class="lang-pill" data-lang="japanese">
+            <span>🇯🇵 Japanese</span>
+            <span class="pill-count">3</span>
+          </button>
+          <button class="lang-pill" data-lang="german">
+            <span>🇩🇪 German</span>
+            <span class="pill-count">2</span>
+          </button>
+          <button class="lang-pill" data-lang="italian">
+            <span>🇮🇹 Italian</span>
+            <span class="pill-count">1</span>
+          </button>
+          <button class="lang-pill" data-lang="korean">
+            <span>🇰🇷 Korean</span>
+            <span class="pill-count">2</span>
+          </button>
+          <button class="lang-pill" data-lang="mandarin">
+            <span>🇨🇳 Mandarin</span>
+            <span class="pill-count">1</span>
+          </button>
+          <button class="lang-pill" data-lang="portuguese">
+            <span>🇧🇷 Portuguese</span>
+            <span class="pill-count">1</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Rooms Grid Container -->
+      <div class="rooms-grid" id="roomsGrid">
+        <!-- Room Cards will be rendered and updated here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ROOM ACTIVITIES SHOWCASE ==================== -->
+  <section class="activities-section" id="activities">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag gold-tag"><i class="fa-solid fa-dice"></i> Shared Activities</span>
+        <h2 class="section-title">Never Run Out of Things to Say</h2>
+        <p class="section-desc">Lingauro rooms are packed with interactive tools to wipe away awkward silences and make speaking feel effortless.</p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="tabs-container">
+        <button class="act-tab-btn active" data-tab="tab-games">
+          <i class="fa-solid fa-gamepad" style="color: #b38600;"></i>
+          <span>In-Room Games</span>
+        </button>
+        <button class="act-tab-btn" data-tab="tab-watch">
+          <i class="fa-solid fa-film" style="color: var(--teal-primary);"></i>
+          <span>Watch Together</span>
+        </button>
+        <button class="act-tab-btn" data-tab="tab-sing">
+          <i class="fa-solid fa-music" style="color: #b38600;"></i>
+          <span>Sing-Alongs & Lyrics</span>
+        </button>
+        <button class="act-tab-btn" data-tab="tab-voice">
+          <i class="fa-solid fa-microphone" style="color: var(--teal-primary);"></i>
+          <span>Voice & Video</span>
+        </button>
+        <button class="act-tab-btn" data-tab="tab-chat">
+          <i class="fa-solid fa-comment-dots" style="color: #b38600;"></i>
+          <span>Smart Chat & Assist</span>
+        </button>
+      </div>
+
+      <!-- Display Box for Active Tab -->
+      <div class="activity-display-box">
+        
+        <!-- Tab 1: In-Room Games -->
+        <div class="tab-pane active" id="tab-games">
+          <div class="pane-grid">
+            <div class="pane-content">
+              <h3>Icebreakers, Taboo & Fun Games</h3>
+              <p>Break the ice with games designed specifically for conversation. Play UNO, Taboo, Codenames, Connect 4, and vocabulary guessing games without leaving your room.</p>
+              <ul class="feature-check-list">
+                <li>
+                  <span class="check-circle gold"><i class="fa-solid fa-check"></i></span>
+                  <span>Instant prompt cards with 500+ topics for all fluency levels</span>
+                </li>
+                <li>
+                  <span class="check-circle gold"><i class="fa-solid fa-check"></i></span>
+                  <span>Taboo game: explain target words without using forbidden clues</span>
+                </li>
+                <li>
+                  <span class="check-circle gold"><i class="fa-solid fa-check"></i></span>
+                  <span>Name-picker wheel for fair turn-taking in group chats</span>
+                </li>
+              </ul>
+              <button class="btn btn-gold" onclick="simulateActivity('games')">
+                <i class="fa-solid fa-play"></i>
+                <span>Try an Icebreaker Card</span>
+              </button>
+            </div>
+
+            <div class="mock-preview-frame">
+              <div class="mock-window-bar">
+                <div class="window-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <span class="window-title">In-Room Game: Taboo (Spanish Club)</span>
+              </div>
+              <div class="mock-game-box" id="demoTabooCard">
+                <span class="game-title-tag">GUESS THIS WORD</span>
+                <div class="game-prompt-word" id="tabooTargetWord">La Playa (The Beach)</div>
+                <p style="font-size: 0.8rem; color: #705400; margin-bottom: 8px; font-weight:700;">FORBIDDEN WORDS:</p>
+                <div class="game-taboo-words" id="tabooForbiddenWords">
+                  <span class="taboo-pill">Arena (Sand)</span>
+                  <span class="taboo-pill">Mar (Sea)</span>
+                  <span class="taboo-pill">Sol (Sun)</span>
+                  <span class="taboo-pill">Verano (Summer)</span>
+                </div>
+                <div class="game-action-row">
+                  <button class="btn btn-sm btn-gold" onclick="drawNextTabooCard()">
+                    <i class="fa-solid fa-rotate"></i>
+                    <span>Next Card</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Watch Together -->
+        <div class="tab-pane" id="tab-watch">
+          <div class="pane-grid">
+            <div class="pane-content">
+              <h3>Synchronized YouTube Streaming</h3>
+              <p>Watch authentic native videos together in sync. Pause anytime to discuss idioms, clarify accent nuances, and laugh at native humor.</p>
+              <ul class="feature-check-list">
+                <li>
+                  <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+                  <span>Synchronized playback so everyone is on the exact same second</span>
+                </li>
+                <li>
+                  <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+                  <span>Curated playlists of street interviews, travel clips & comedy</span>
+                </li>
+                <li>
+                  <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+                  <span>Dual bilingual subtitles to catch every fast phrase</span>
+                </li>
+              </ul>
+              <button class="btn btn-primary" onclick="simulateActivity('watch')">
+                <i class="fa-solid fa-video"></i>
+                <span>Open Watch Party Demo</span>
+              </button>
+            </div>
+
+            <div class="mock-preview-frame">
+              <div class="mock-window-bar">
+                <div class="window-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <span class="window-title">Synced Player: French Street Food Tour</span>
+              </div>
+              <div class="mock-video-box">
+                <div class="video-overlay-text">
+                  <div class="video-play-btn" onclick="toggleMockVideo()">
+                    <i class="fa-solid fa-play" id="mockPlayIcon"></i>
+                  </div>
+                  <p style="font-size:0.9rem; font-weight:600;" id="mockVideoStatus">Click to Play Synced Stream</p>
+                </div>
+                <div class="video-captions-bar">
+                  <span>🇫🇷 "Ce fromage est absolument délicieux..."</span>
+                  <span style="color: var(--gold-primary);">[02:44 / 08:15]</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Sing-Alongs -->
+        <div class="tab-pane" id="tab-sing">
+          <div class="pane-grid">
+            <div class="pane-content">
+              <h3>Sing-Alongs with Synchronized Lyrics</h3>
+              <p>Music is proven to accelerate language recall. Play popular tunes in your room and follow along with scrolling, karaoke-style lyrics.</p>
+              <ul class="feature-check-list">
+                <li>
+                  <span class="check-circle gold"><i class="fa-solid fa-check"></i></span>
+                  <span>Word-by-word highlights to master cadence and melody</span>
+                </li>
+                <li>
+                  <span class="check-circle gold"><i class="fa-solid fa-check"></i></span>
+                  <span>Easy toggle between romanized and native scripts</span>
+                </li>
+                <li>
+                  <span class="check-circle gold"><i class="fa-solid fa-check"></i></span>
+                  <span>Low pressure: sing quietly or belt it out together</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mock-preview-frame">
+              <div class="mock-window-bar">
+                <div class="window-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+                <span class="window-title">Sing-Along: Japanese City Pop (Romaji)</span>
+              </div>
+              <div style="background:#0f2424; color:#fff; border-radius:12px; padding:24px; text-align:center;">
+                <p style="color:#7b9999; font-size:0.8rem; margin-bottom:12px;">TRACK: PLASTIC LOVE (竹内まりや)</p>
+                <p style="font-size:1.25rem; font-weight:800; color:var(--gold-primary); margin-bottom:8px;">♪ "Watashi o koto o keshite honki de..."</p>
+                <p style="color:#a5cfcf; font-size:0.95rem;">(Don't take me so seriously...)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Voice & Video -->
+        <div class="tab-pane" id="tab-voice">
+          <div class="pane-grid">
+            <div class="pane-content">
+              <h3>Drop-In Voice & Video Rooms</h3>
+              <p>Crystal-clear WebRTC audio with no lag. Whether you want a voice-only podcast feel or full face-to-face video, you're always in complete control.</p>
+              <ul class="feature-check-list">
+                <li><span class="check-circle"><i class="fa-solid fa-check"></i></span><span>Instant microphone and camera privacy toggles</span></li>
+                <li><span class="check-circle"><i class="fa-solid fa-check"></i></span><span>Dynamic audio indicator showing who is speaking</span></li>
+                <li><span class="check-circle"><i class="fa-solid fa-check"></i></span><span>Hand-raise queue for polite room moderation</span></li>
+              </ul>
+            </div>
+            <div class="mock-preview-frame">
+              <div style="background:var(--bg-surface); padding:20px; border-radius:12px; text-align:center;">
+                <i class="fa-solid fa-headset" style="font-size:3rem; color:var(--teal-primary); margin-bottom:12px;"></i>
+                <h4 style="color:var(--teal-darker);">Ultra Low Latency Audio</h4>
+                <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:6px;">Works directly in Safari, Chrome, Edge, and mobile browsers without plugins.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 5: Smart Chat -->
+        <div class="tab-pane" id="tab-chat">
+          <div class="pane-grid">
+            <div class="pane-content">
+              <h3>Live In-Room Chat with Instant Hints</h3>
+              <p>Never feel stranded when you forget a word. Type in chat, search definitions on the fly, and send GIFs and emoji reactions to keep the energy light.</p>
+              <ul class="feature-check-list">
+                <li><span class="check-circle gold"><i class="fa-solid fa-check"></i></span><span>One-click word translation hints directly in the thread</span></li>
+                <li><span class="check-circle gold"><i class="fa-solid fa-check"></i></span><span>Private 1-on-1 direct messages to swap contacts</span></li>
+                <li><span class="check-circle gold"><i class="fa-solid fa-check"></i></span><span>Room-wide reaction emojis that float up on screen</span></li>
+              </ul>
+            </div>
+            <div class="mock-preview-frame">
+              <div class="mock-chat-stream">
+                <div class="chat-bubble">
+                  <div class="chat-bubble-content">
+                    <strong>Elena:</strong> Wie war dein Wochenende?
+                    <span class="translation-hint">Translation: How was your weekend?</span>
+                  </div>
+                </div>
+                <div class="chat-bubble mine">
+                  <div class="chat-bubble-content">
+                    <strong>You:</strong> Es war super! Ich war im Park.
+                    <span class="translation-hint">It was great! I was in the park.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 1-ON-1 SPEED MATCH SECTION ==================== -->
+  <section class="speed-match-section" id="speed-match">
+    <div class="container">
+      <div class="matcher-card">
+        <div class="matcher-info">
+          <span class="section-tag"><i class="fa-solid fa-bolt"></i> Quick Match</span>
+          <h2 style="font-size: 2.1rem; font-weight:800; color:var(--teal-darker); margin-bottom:12px;">
+            Prefer a Quiet 1-on-1 Conversation?
+          </h2>
+          <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 24px;">
+            Tell us which language you want to practice and your level. We'll connect you directly to a native speaker or fellow learner in seconds.
+          </p>
+
+          <div class="matcher-form">
+            <div class="matcher-field">
+              <label for="matchTargetLang">I want to speak:</label>
+              <select id="matchTargetLang">
+                <option value="Spanish">🇪🇸 Spanish</option>
+                <option value="English">🇺🇸 English</option>
+                <option value="French">🇫🇷 French</option>
+                <option value="Japanese">🇯🇵 Japanese</option>
+                <option value="German">🇩🇪 German</option>
+                <option value="Italian">🇮🇹 Italian</option>
+                <option value="Korean">🇰🇷 Korean</option>
+              </select>
+            </div>
+
+            <div class="matcher-field">
+              <label for="matchMyLevel">My current level:</label>
+              <select id="matchMyLevel">
+                <option value="Beginner">A1-A2 (Beginner)</option>
+                <option value="Intermediate" selected>B1-B2 (Intermediate)</option>
+                <option value="Advanced">C1-C2 (Advanced)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg" id="startMatchBtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Find My Partner Now</span>
+          </button>
+        </div>
+
+        <!-- Match Status / Result Card -->
+        <div class="matching-status-box" id="matchingBox">
+          <div class="radar-spinner" id="radarSpinner" style="display: none;">
+            <div class="radar-circle"></div>
+            <div class="radar-circle"></div>
+            <i class="fa-solid fa-satellite-dish" style="color: var(--teal-primary);"></i>
+          </div>
+
+          <div id="matchDefaultState">
+            <div style="font-size: 2.4rem; color: var(--gold-primary); margin-bottom: 10px;">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h4 style="font-size: 1.1rem; font-weight:700; color:var(--text-main); margin-bottom:6px;">
+              Instant Peer Pairing
+            </h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">
+              Average wait time: <strong>under 12 seconds</strong>. No scheduling or booking hassle.
+            </p>
+          </div>
+
+          <!-- Matched Partner Card (Revealed after searching) -->
+          <div id="matchedPartnerCard" style="display: none;">
+            <div style="display: inline-block; background: var(--teal-subtle); color: var(--teal-dark); font-size: 0.72rem; font-weight: 800; padding: 2px 10px; border-radius: 99px; margin-bottom: 12px;">
+              MATCH FOUND!
+            </div>
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80" alt="Lucia" style="width:68px; height:68px; border-radius:50%; margin: 0 auto 10px; object-fit:cover; border:2px solid var(--gold-primary);">
+            <h4 style="font-size: 1.1rem; font-weight:800; color:var(--teal-darker);">Lucía Valdés</h4>
+            <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 14px;">
+              🇪🇸 Madrid, Spain • Native Speaker • Wants English
+            </p>
+            <button class="btn btn-gold btn-sm" style="width: 100%;" id="enter1on1RoomBtn">
+              <i class="fa-solid fa-video"></i>
+              <span>Enter Private Room</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS (3 SIMPLE STEPS) ==================== -->
+  <section class="how-it-works-section" id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag"><i class="fa-solid fa-route"></i> Simple Process</span>
+        <h2 class="section-title">Speaking A Language Is A Sport, Not A Test</h2>
+        <p class="section-desc">You didn't learn your first language with grammar tables. You learned it by talking with people.</p>
+      </div>
+
+      <div class="steps-grid">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <span class="step-number">01</span>
+          <div class="step-icon-wrap">
+            <i class="fa-solid fa-earth-americas"></i>
+          </div>
+          <h3 class="step-title">Choose Your Language</h3>
+          <p class="step-desc">
+            Browse rooms by language and proficiency level. Filter by group discussions, 1-on-1 chats, or game nights.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card step-gold">
+          <span class="step-number">02</span>
+          <div class="step-icon-wrap">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3 class="step-title">Drop In Instantly</h3>
+          <p class="step-desc">
+            Zero friction. No app store downloads, Zoom links, or complex sign-up sheets. Jump straight into the room in one click.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <span class="step-number">03</span>
+          <div class="step-icon-wrap">
+            <i class="fa-solid fa-face-smile"></i>
+          </div>
+          <h3 class="step-title">Talk, Play & Watch</h3>
+          <p class="step-desc">
+            Speak at your own pace. Use icebreaker cards, watch synchronized videos, and build lasting friendships across the world.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY LINGAURO (COMPARISON TABLE) ==================== -->
+  <section class="why-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag gold-tag"><i class="fa-solid fa-scale-balanced"></i> Honest Comparison</span>
+        <h2 class="section-title">Why Practice On Lingauro?</h2>
+        <p class="section-desc">See how Lingauro differs from solitary flashcard apps and expensive private tutors.</p>
+      </div>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th style="width: 30%;">Feature</th>
+              <th class="col-highlight" style="width: 35%;">Lingauro</th>
+              <th style="width: 17.5%;">Flashcard Apps</th>
+              <th style="width: 17.5%;">Private Tutors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Real Human Conversations</strong></td>
+              <td class="col-highlight"><i class="fa-solid fa-circle-check icon-yes"></i> Yes, 24/7 drop-in</td>
+              <td><i class="fa-solid fa-circle-xmark icon-no"></i> None (AI bots only)</td>
+              <td><i class="fa-solid fa-circle-check icon-yes"></i> Yes (1 hr / week)</td>
+            </tr>
+            <tr>
+              <td><strong>Cost</strong></td>
+              <td class="col-highlight"><strong style="color:var(--teal-primary);">100% Free</strong></td>
+              <td>Freemium ($12+/mo)</td>
+              <td>$20 to $60 / hour</td>
+            </tr>
+            <tr>
+              <td><strong>Interactive Games & Shared Videos</strong></td>
+              <td class="col-highlight"><i class="fa-solid fa-circle-check icon-yes"></i> UNO, Taboo, YouTube</td>
+              <td><i class="fa-solid fa-circle-xmark icon-no"></i> Multiple choice taps</td>
+              <td><i class="fa-solid fa-circle-xmark icon-no"></i> Static PDF lessons</td>
+            </tr>
+            <tr>
+              <td><strong>Installation & Setup</strong></td>
+              <td class="col-highlight"><i class="fa-solid fa-circle-check icon-yes"></i> Pure Browser (PWA)</td>
+              <td>Store app download</td>
+              <td>Zoom / Skype links</td>
+            </tr>
+            <tr>
+              <td><strong>Zero Awkward Silences</strong></td>
+              <td class="col-highlight"><i class="fa-solid fa-circle-check icon-yes"></i> Built-in prompt decks</td>
+              <td>N/A</td>
+              <td>Depends on tutor</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== REAL LEARNER STORIES ==================== -->
+  <section class="community-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag"><i class="fa-solid fa-heart"></i> Global Community</span>
+        <h2 class="section-title">Loved By Learners Everywhere</h2>
+        <p class="section-desc">Read how people overcame speaking anxiety and reached fluency on Lingauro.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">
+            "I studied Spanish for 3 years on apps but couldn't say a sentence at an airport. Joining Lingauro rooms with the Taboo game made me forget my fear. I speak every day now!"
+          </p>
+          <div class="reviewer-meta">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Sarah" class="reviewer-avatar">
+            <div>
+              <div class="reviewer-name">Sarah Jenkins</div>
+              <div class="reviewer-sub">Practicing Spanish • London, UK</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">
+            "The watch-together feature is unbelievable. We watched anime clips together in the Japanese room and debated the jokes. It feels like hanging out with friends, not studying."
+          </p>
+          <div class="reviewer-meta">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Kenji" class="reviewer-avatar">
+            <div>
+              <div class="reviewer-name">Marco Rossi</div>
+              <div class="reviewer-sub">Practicing Japanese • Rome, Italy</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">
+            "I love that there is nothing to install. I open Chrome on my phone during lunch, jump into a French discussion, and speak for 20 minutes with native speakers in Lyon."
+          </p>
+          <div class="reviewer-meta">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&auto=format&fit=crop&q=80" alt="David" class="reviewer-avatar">
+            <div>
+              <div class="reviewer-name">David Chen</div>
+              <div class="reviewer-sub">Practicing French • Toronto, Canada</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ACCORDION ==================== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Questions & Answers</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Everything you need to know about getting started on Lingauro.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item open">
+          <div class="faq-question">
+            <span>Is Lingauro really free to use?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Yes, Lingauro is completely free. You can drop into open rooms, play icebreaker games, watch videos with partners, and start 1-on-1 exchanges with no payment required.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do I have to turn on my video camera?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Not at all! You are free to participate voice-only or even start by listening in with your microphone muted until you feel confident enough to say hello.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>I'm a complete beginner. Will people be patient with me?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Absolutely. Every room displays a level badge (e.g. Beginner A1-A2), and many rooms are specifically hosted by patient native speakers who love guiding new learners through basic phrases.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do I need to download an app from Google Play or App Store?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            No downloads are necessary. Lingauro is a Progressive Web App (PWA) that runs instantly in Chrome, Safari, Firefox, or Edge. You can easily pin it to your phone's home screen for one-tap access.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do games and YouTube watch parties work?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Inside any room, any participant or host can open the activities drawer to start Taboo cards, icebreaker questions, or synchronized YouTube video streams. Everyone in the room sees and hears the same content simultaneously!
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CALL TO ACTION BANNER ==================== -->
+  <section class="cta-banner">
+    <div class="container cta-box">
+      <span class="cta-tag">JOIN THE CONVERSATION TODAY</span>
+      <h2 class="cta-title">Your Next Language Breakthrough Starts In One Click</h2>
+      <p class="cta-subtitle">
+        Join over 50,000 language learners across 140 countries. No fees, no downloads, zero barrier to entry.
+      </p>
+      <div class="cta-actions">
+        <button class="btn btn-gold btn-lg" onclick="simulateGoogleLogin()">
+          <i class="fa-brands fa-google"></i>
+          <span>Sign In with Google</span>
+        </button>
+        <a href="#rooms" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color:#ffffff; background:rgba(255,255,255,0.08);">
+          <i class="fa-solid fa-compass"></i>
+          <span>Browse Available Rooms</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-area">
+            <div class="logo-icon">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <span class="logo-text" style="color: #ffffff;">Ling<span style="color: var(--gold-primary);">auro</span></span>
+          </div>
+          <p>
+            Real-time, browser-based language practice platform. Helping learners speak fluently through live human connections, games, and shared activities.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Practice Rooms</h4>
+          <ul class="footer-links">
+            <li><a href="#rooms" onclick="filterByLang('english')">English Rooms</a></li>
+            <li><a href="#rooms" onclick="filterByLang('spanish')">Spanish Rooms</a></li>
+            <li><a href="#rooms" onclick="filterByLang('french')">French Rooms</a></li>
+            <li><a href="#rooms" onclick="filterByLang('japanese')">Japanese Rooms</a></li>
+            <li><a href="#rooms" onclick="filterByLang('german')">German Rooms</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Activities</h4>
+          <ul class="footer-links">
+            <li><a href="#activities">Live Voice & Video</a></li>
+            <li><a href="#activities">Taboo & Icebreaker Games</a></li>
+            <li><a href="#activities">Watch Together (YouTube)</a></li>
+            <li><a href="#activities">Karaoke & Sing-Alongs</a></li>
+            <li><a href="#speed-match">1-on-1 Speed Matcher</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Community & Safety</h4>
+          <ul class="footer-links">
+            <li><a href="#faq">Community Guidelines</a></li>
+            <li><a href="#faq">Moderation Policy</a></li>
+            <li><a href="#faq">PWA Installation Guide</a></li>
+            <li><a href="#faq">Privacy Policy & Terms</a></li>
+            <li><a href="#faq">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Lingauro. All rights reserved. Designed with clean Teal & Gold aesthetics.
+        </div>
+        <div style="display:flex; gap:16px;">
+          <a href="#" style="color:#7b9999;"><i class="fa-brands fa-discord"></i> Discord</a>
+          <a href="#" style="color:#7b9999;"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+          <a href="#" style="color:#7b9999;"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== LIVE PRACTICE ROOM MODAL ==================== -->
+  <div class="modal-overlay" id="roomModalOverlay">
+    <div class="modal-room-window">
+      <!-- Modal Header -->
+      <div class="modal-room-header">
+        <div class="modal-room-info">
+          <span style="font-size: 1.6rem;" id="modalRoomFlag">🇪🇸</span>
+          <div>
+            <h3 class="modal-room-title" id="modalRoomTitle">Casual Spanish Practice Room</h3>
+            <span style="font-size: 0.75rem; color: #7b9999;" id="modalRoomHost">Host: Sofia • Level: Intermediate</span>
+          </div>
+          <span class="modal-room-badge" id="modalRoomBadge">🔴 LIVE • 5 Participants</span>
+        </div>
+
+        <button class="modal-close-btn" id="modalCloseBtn" title="Leave & Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Stage + Sidebar) -->
+      <div class="modal-room-body">
+        <!-- Main Stage Grid -->
+        <div class="modal-stage">
+          <div class="tiles-grid" id="modalTilesGrid">
+            <!-- Tiles rendered dynamically via app.js -->
+          </div>
+
+          <!-- Bottom Audio Visualizer Bar -->
+          <div class="stage-visualizer-bar">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981;"></span>
+              <span style="font-size: 0.8rem; font-weight: 700; color: #a5cfcf;">HD Audio Connected</span>
+            </div>
+            <canvas id="audioVisualizerCanvas" class="visualizer-canvas" width="220" height="28"></canvas>
+            <span style="font-size: 0.75rem; color: var(--gold-primary); font-weight: 700;" id="currentSpeakerLabel">Speaking: Sofia (Host)</span>
+          </div>
+        </div>
+
+        <!-- Room Sidebar (Chat & Icebreakers) -->
+        <div class="modal-room-sidebar">
+          <div class="sidebar-tabs">
+            <button class="sidebar-tab-btn active" data-side="chat">
+              <i class="fa-solid fa-comments"></i> Room Chat
+            </button>
+            <button class="sidebar-tab-btn" data-side="prompt">
+              <i class="fa-solid fa-lightbulb"></i> Icebreaker
+            </button>
+          </div>
+
+          <!-- Tab 1: Room Chat -->
+          <div class="sidebar-pane active" id="sidePaneChat">
+            <div class="modal-chat-messages" id="modalChatList">
+              <div class="m-chat-item">
+                <div class="m-chat-user">Sofia (Host)</div>
+                <div class="m-chat-text">¡Hola a todos! Welcome to today's room!</div>
+              </div>
+              <div class="m-chat-item">
+                <div class="m-chat-user">Camila</div>
+                <div class="m-chat-text">Ready to practice! What is our topic today?</div>
+              </div>
+            </div>
+
+            <div class="modal-chat-input-bar">
+              <input type="text" id="modalChatInput" placeholder="Type a message or translation query...">
+              <button class="btn btn-primary btn-sm" id="sendChatBtn">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab 2: Icebreaker Deck -->
+          <div class="sidebar-pane" id="sidePanePrompt">
+            <div class="modal-prompt-pane">
+              <div class="prompt-card-box">
+                <div class="prompt-card-tag">CONVERSATION PROMPT #<span id="promptIndex">1</span></div>
+                <p class="prompt-card-text" id="promptText">
+                  "If you could travel anywhere tomorrow without worrying about budget, where would you go and why?"
+                </p>
+              </div>
+              <button class="btn btn-gold btn-sm" id="nextPromptBtn">
+                <i class="fa-solid fa-shuffle"></i>
+                <span>Next Icebreaker Card</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Bottom Controls Bar -->
+      <div class="modal-controls-bar">
+        <div class="control-buttons-left">
+          <button class="room-ctrl-btn" id="ctrlMicBtn" title="Toggle Microphone">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+          <button class="room-ctrl-btn" id="ctrlCamBtn" title="Toggle Camera">
+            <i class="fa-solid fa-video"></i>
+          </button>
+        </div>
+
+        <div class="control-buttons-center">
+          <button class="room-ctrl-btn" id="ctrlHandBtn" title="Raise Hand">
+            <i class="fa-solid fa-hand"></i>
+          </button>
+          <button class="room-ctrl-btn" id="ctrlGameBtn" title="Open Game Drawer">
+            <i class="fa-solid fa-dice" style="color: var(--gold-primary);"></i>
+          </button>
+          <button class="room-ctrl-btn" id="ctrlHeartBtn" title="Send Heart Reaction">
+            <i class="fa-solid fa-heart" style="color: #f43f5e;"></i>
+          </button>
+        </div>
+
+        <div class="control-buttons-right">
+          <button class="room-ctrl-btn btn-leave" id="ctrlLeaveBtn">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span>Leave Room</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== CREATE ROOM MODAL ==================== -->
+  <div class="modal-overlay" id="createRoomModalOverlay">
+    <div class="create-modal-window">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+        <h3 style="color:var(--teal-darker); margin:0;">Create a Practice Room</h3>
+        <button class="modal-close-btn" id="createCloseBtn" style="color:var(--text-main); background:var(--bg-surface);">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:20px;">
+        Start an open room for anyone to join, or set it to invite-only for friends.
+      </p>
+
+      <form id="createRoomForm">
+        <div class="form-group">
+          <label for="newRoomTitle">Room Topic / Title</label>
+          <input type="text" id="newRoomTitle" placeholder="e.g. Anime Discussion & Casual Slang" required>
+        </div>
+
+        <div class="form-group">
+          <label for="newRoomLanguage">Target Language</label>
+          <select id="newRoomLanguage">
+            <option value="english">🇺🇸 English</option>
+            <option value="spanish">🇪🇸 Spanish</option>
+            <option value="french">🇫🇷 French</option>
+            <option value="japanese">🇯🇵 Japanese</option>
+            <option value="german">🇩🇪 German</option>
+            <option value="italian">🇮🇹 Italian</option>
+            <option value="korean">🇰🇷 Korean</option>
+            <option value="mandarin">🇨🇳 Mandarin</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="newRoomLevel">Intended Level</label>
+          <select id="newRoomLevel">
+            <option value="beginner">Beginner Friendly (A1-A2)</option>
+            <option value="intermediate" selected>Intermediate (B1-B2)</option>
+            <option value="advanced">Advanced & Native (C1-C2)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="newRoomActivity">Primary Activity</label>
+          <select id="newRoomActivity">
+            <option value="casual">Casual Voice & Video Chat</option>
+            <option value="games">Icebreaker Games (Taboo, UNO, Codenames)</option>
+            <option value="watch">Watch Together (YouTube)</option>
+            <option value="sing">Sing-Alongs & Karaoke</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; margin-top:10px;">
+          <i class="fa-solid fa-rocket"></i>
+          <span>Launch Room Now</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
